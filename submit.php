@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <button id="sub" onClick="check()" class="layui-btn layui-btn-big layui-btn-normal">Submit</button>
+        <button id="sub" onClick="check(<?php echo $_GET['id']; ?>)" class="layui-btn layui-btn-big layui-btn-normal">Submit</button>
     </div>
 </div>
 

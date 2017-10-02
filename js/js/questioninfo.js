@@ -1,3 +1,3 @@
-function ojsubmit() {
-    window.location.href="./ojSubmit.php";
+function ojsubmit(id) {
+    window.location.href="./ojSubmit.php?id="+id;
 }

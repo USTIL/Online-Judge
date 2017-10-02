@@ -2,12 +2,12 @@ layui.use('form', function() {
     var form = layui.form;
 });
 
-function check() {
+function check(id) {
     layui.use('layer', function() {
         var layer = layui.layer;
         var code = $('#codebox').val();
         layer.load(1);
-        $.post('./check.php', {
+        $.post('./check.php?id='+id, {
             code: code
         }, function(data) {
             layer.closeAll();

@@ -1,3 +1,3 @@
 function showQuestion(id) {
-    window.location.href="./ojQuestionInfo.php";
+    window.location.href="./ojQuestionInfo.php?id="+id;
 }

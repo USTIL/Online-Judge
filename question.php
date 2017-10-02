@@ -1,4 +1,8 @@
-
+<?php
+include "./api/problemAction.php";
+$problem = new problemAction();
+$rows = $problem->getAll();
+?>
 <link rel="stylesheet" type="text/css" href="./js/css/question.css" />
 
 <div id="bodydiv">
@@ -9,9 +13,11 @@
         </tr>
         </thead>
         <tbody>
+        <?php foreach ($rows as $row) { ?>
         <tr>
-            <td><a href="javascript:showQuestion(1);">a+b Program</a></td>
+            <td><a href="javascript:showQuestion(<?php echo $row['id']; ?>);"><?php echo $row['title']; ?></a></td>
         </tr>
+        <?php } ?>
         </tbody>
     </table>
 </div>

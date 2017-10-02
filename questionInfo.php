@@ -1,3 +1,9 @@
+<?php
+$id = $_GET['id'];
+include "./api/problemAction.php";
+$problem = new problemAction();
+$row = $problem->get($id);
+?>
 <link rel="stylesheet" type="text/css" href="./js/css/questioninfo.css" />
 
 <div id="infodiv">
@@ -5,39 +11,39 @@
     <fieldset class="layui-elem-field">
         <legend>Problem Description</legend>
         <div class="layui-field-box">
-            Calculate A + B.
+            <?php echo $row['description']; ?>
         </div>
     </fieldset>
 
     <fieldset class="layui-elem-field">
         <legend>Input</legend>
         <div class="layui-field-box">
-            Each line will contain two numbers A and B. Process to end of file.
+            <?php echo $row['t_input']; ?>
         </div>
     </fieldset>
 
     <fieldset class="layui-elem-field">
         <legend>Output</legend>
         <div class="layui-field-box">
-            For each case, output A + B in one line.
+            <?php echo $row['t_output']; ?>
         </div>
     </fieldset>
 
     <fieldset class="layui-elem-field">
         <legend>Sample Input</legend>
         <div class="layui-field-box">
-            1 1
+            <?php echo $row['s_input']; ?>
         </div>
     </fieldset>
 
     <fieldset class="layui-elem-field">
         <legend>Sample Output</legend>
         <div class="layui-field-box">
-            2
+            <?php echo $row['s_output']; ?>
         </div>
     </fieldset>
 
-    <button onclick="ojsubmit()" class="layui-btn layui-btn-normal">Submit</button>
+    <button onclick="ojsubmit(<?php echo $id; ?>)" class="layui-btn layui-btn-normal">Submit</button>
 
 </div>
 
